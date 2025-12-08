@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1 — Projectdocumentatie PPT1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+
+            /* Achtergrondfoto toegevoegd */
+            background-image: url('achtergrond/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: #1f1f1f;
+            position: relative;
+            z-index: 0; /* Zorgt ervoor dat de body de z-index '0' heeft */
+        }
+
+        /* Transparante overlay toegevoegd */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6); /* Wit met 60% dekking */
+            z-index: -1; /* Plaatst de overlay achter de body-inhoud */
+        }
+
+        header {
+            background: #4FA9E5;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            justify-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            width: 100%;
+            max-width: 180px;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 14px 0;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            color: #4FA9E5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            background: #4FA9E5;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px; /* Padding iets verhoogd voor de look van de witte box */
+            background: white; /* Veranderd van rgba naar wit voor een betere look met de overlay */
+            border-radius: 14px; /* Verhoogde border-radius voor consistentie met index.html */
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* Zwaardere schaduw voor witte box */
+            backdrop-filter: blur(4px); /* Optioneel: voegt een blur-effect toe aan de achtergrond van de main-box (kan variëren in browserondersteuning) */
+        }
+
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        main p {
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #6d6d6d;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rani Gagroo</h1>
+    <p>Projectdocumentatie PPT1</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="week1.html">Week 1</a>
+    <a href="week2.html">Week 2</a>
+    <a href="week3.html">Week 3</a>
+    <a href="week4.html">Week 4</a>
+    <a href="week5.html">Week 5</a>
+    <a href="week6.html">Week 6</a>
+    <a href="week7.html">Week 7</a>
+    <a href="week8.html">Week 8</a>
+    <a href="week9.html">Week 9</a>
+    <a href="week10.html">Week 10</a>
+</nav>
+
+<main>
+    <h2>Week 1</h2>
+
+    <p>
+        Tijdens de <strong>eerste week</strong> van dit vak was ik nog niet aanwezig, omdat ik later ben <strong>ingestroomd</strong> in de richting. Hierdoor heb ik de officiële <strong>introductieles</strong> gemist, waarin de docent de algemene uitleg over het vak, de <strong>leerdoelen</strong> en de <strong>eerste opdracht</strong> heeft gegeven. Nadat ik ben begonnen, heb ik extra tijd genomen om deze informatie <strong>zelfstandig in te halen</strong>.
+    </p>
+
+    <p>
+        Ik heb de beschikbare <strong>documenten</strong> en <strong>opdrachten</strong> doorgenomen, en aan <strong>klasgenoten</strong> gevraagd wat er precies tijdens de eerste lessen besproken was. Dit hielp mij om een duidelijk beeld te krijgen van de <strong>opzet van het vak</strong> en de <strong>manier van werken</strong>. Ook heb ik kennisgemaakt met de <strong>digitale leeromgeving</strong> waarin we onze opdrachten moeten inleveren en <strong>feedback</strong> kunnen ontvangen.
+    </p>
+
+    <p>
+        Deze week stond vooral in het teken van <strong>oriëntatie</strong>, het <strong>inhalen van gemiste informatie</strong> en <strong>voorbereiding</strong> op de verdere weken. Door het materiaal na te lezen en de instructies zorgvuldig te bestuderen, voel ik me nu beter voorbereid om <strong>actief mee te doen</strong> aan de lessen en opdrachten.
+    </p>
+</main>
+
+<footer>
+    Published on Oct 19, 2025
+</footer>
+
+</body>
+</html>
