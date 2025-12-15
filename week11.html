@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 10 — Projectdocumentatie PPT1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-image: url('achtergrond/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #1f1f1f;
+            position: relative;
+            z-index: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(79,169,229,0.9), rgba(155,89,182,0.85), rgba(52,152,219,0.9));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            justify-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            width: 100%;
+            max-width: 180px;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 14px 0;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            color: #4FA9E5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            background: #4FA9E5;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+        }
+
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        main p {
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        /* Grid voor 2 foto's naast elkaar */
+        .foto-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        /* Grotere afbeeldingen die kolom volledig benutten */
+        .design-foto {
+            width: 100%; /* vult de kolom volledig */
+            max-width: 300px; /* maximale breedte */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .design-foto:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* Responsive voor mobiel */
+        @media (max-width: 500px) {
+            .foto-grid {
+                grid-template-columns: 1fr; /* 1 foto per rij */
+            }
+
+            .design-foto {
+                max-width: 80%; /* past breedte aan op mobiel */
+            }
+        }
+
+     footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 40px auto 20px;
+    padding: 15px 30px;
+    font-size: 0.9rem;
+    color: #1f1f1f;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+footer a {
+    color: #4FA9E5;        /* blauwe kleur */
+    text-decoration: none;  /* geen lijn standaard */
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline; /* lijn alleen bij hover */
+}
+
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Rani Gagroo</h1>
+    <p>Projectdocumentatie PRTT 1 | 1GDM2</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="week1.html">Week 1</a>
+    <a href="week2.html">Week 2</a>
+    <a href="week3.html">Week 3</a>
+    <a href="week4.html">Week 4</a>
+    <a href="week5.html">Week 5</a>
+    <a href="week6.html">Week 6</a>
+    <a href="week7.html">Week 7</a>
+    <a href="week8.html">Week 8</a>
+    <a href="week9.html">Week 9</a>
+    <a href="week10.html">Week 10</a>
+    <a href="week11.html">Week 11</a>
+</nav>
+
+<main>
+    <h2>Week 11</h2>
+
+    <p>
+        Deze week hebben we verder gewerkt in <strong>Figma</strong> en links gelegd tussen onze verschillende schermen, zodat het interactief werd. Ik heb ook mijn kleuren iets aangepast; zo heb ik mijn oranje feller gemaakt zodat het er meer uitspringt.
+    </p>
+
+    <p>
+        Daarnaast hebben we feedback gekregen op onze <strong>HTML</strong>-pagina’s. Ik heb onder andere een achtergrond toegevoegd en enkele visuele verbeteringen doorgevoerd.
+    </p>
+
+    <!-- Container voor foto's -->
+    <div class="foto-grid">
+        <img src="Voorbeelden/12.png" alt="Ontwerpvariant 1"
+             class="design-foto" onclick="openLightbox(this.src)">
+        <img src="Voorbeelden/13.png" alt="Ontwerpvariant 2"
+             class="design-foto" onclick="openLightbox(this.src)">
+        <img src="Voorbeelden/14.png" alt="Ontwerpvariant 3"
+             class="design-foto" onclick="openLightbox(this.src)">
+        <img src="Voorbeelden/15.png" alt="Ontwerpvariant 4"
+             class="design-foto" onclick="openLightbox(this.src)">
+    </div>
+</main>
+
+<footer>
+     <p>
+        <a href="https://github.com/ranigagroo/Projectdocs-tailwind" target="_blank">
+            Bekijk laatste versie op GitHub
+        </a>
+    </p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close" onclick="closeLightbox(event)">×</span>
+    <img id="lightbox-img">
+</div>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById("lightbox-img").src = src;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox(event) {
+        if (event) event.stopPropagation();
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
