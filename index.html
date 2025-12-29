@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projectdocumentatie — Nieuw Ontwerp</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-image: url('achtergrond/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #1f1f1f;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.6);
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(79,169,229,0.9), rgba(155,89,182,0.85));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            background: white;
+            border-radius: 14px;
+            padding: 14px 0;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            color: #4FA9E5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            background: #4FA9E5;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        main p {
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* DOWNLOAD KNOP */
+        .download-btn {
+            display: block;
+            background-color: #4FA9E5;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            margin: 25px auto 0;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            background-color: #3a8bc0;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 40px auto 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        footer a {
+            color: #4FA9E5;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* ===== POPUP ===== */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .popup {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .popup button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+        }
+
+        .yes { background: #4FA9E5; }
+        .sure { background: #9b59b6; }
+
+        /* ===== BALLONNEN ===== */
+        .balloon {
+            position: fixed;
+            width: 30px;
+            height: 40px;
+            border-radius: 50% 50% 45% 45%;
+            animation: floatUp 3.5s ease-out forwards;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            width: 2px;
+            height: 14px;
+            background: #aaa;
+            transform: translateX(-50%);
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translate(var(--x), -300px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+    <div class="popup" id="popupBox">
+        <h3>Ben je klaar voor mijn projectdocumentatie?</h3>
+        <div class="popup-buttons">
+            <button class="yes" onclick="closePopup()">Ja</button>
+            <button class="sure" onclick="closePopup()">Natuurlijk!</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <h1>Rani Gagroo</h1>
+    <p>Projectdocumentatie PRTT 1 | 1GDM2</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="week1.html">Week 1</a>
+    <a href="week2.html">Week 2</a>
+    <a href="week3.html">Week 3</a>
+    <a href="week4.html">Week 4</a>
+    <a href="week5.html">Week 5</a>
+    <a href="week6.html">Week 6</a>
+    <a href="week7.html">Week 7</a>
+    <a href="week8.html">Week 8</a>
+    <a href="week9.html">Week 9</a>
+    <a href="week10.html">Week 10</a>
+    <a href="week11.html">Week 11</a>
+</nav>
+
+<main>
+    <h2>Welkom bij mijn projectdocumentatie</h2>
+    <p>
+        Op deze website vind je mijn <strong>documentatie</strong> voor PPT1 in een <strong>volledig nieuw ontwerp.</strong> Alles is opnieuw vormgegeven met een modernere uitstraling, overzichtelijke navigatie en zachte kleuren. Via het menu hierboven kun je per week <strong>mijn voortgang bekijken:</strong> van de eerste schetsen tot het werken met <strong>Figma, HTML, CSS en andere vaardigheden</strong> die ik tijdens het project heb ontwikkeld.
+    </p>
+
+    <!-- DOWNLOAD KNOP TERUG -->
+    <a href="Downloads/BP_HTML_09TWND-main.zip" download class="download-btn">
+        Download volledige ontwerp documentatie (ZIP)
+    </a>
+</main>
+
+<footer>
+    <p>
+        <a href="https://github.com/ranigagroo/Projectdocs-tailwind" target="_blank">
+            Bekijk laatste versie op GitHub
+        </a>
+    </p>
+</footer>
+
+<script>
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        const box = document.getElementById('popupBox');
+        const rect = box.getBoundingClientRect();
+
+        popup.style.display = 'none';
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        launchBalloons(centerX, centerY);
+    }
+
+    function launchBalloons(x, y) {
+        const colors = ['#4FA9E5', '#9b59b6', '#f1c40f', '#2ecc71', '#e67e22'];
+
+        for (let i = 0; i < 12; i++) {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+
+            balloon.style.left = x + (Math.random() * 80 - 40) + 'px';
+            balloon.style.top = y + 'px';
+            balloon.style.backgroundColor =
+                colors[Math.floor(Math.random() * colors.length)];
+
+            balloon.style.setProperty('--x', (Math.random() * 100 - 50) + 'px');
+
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 4000);
+        }
+    }
+</script>
+
+</body>
+</html>
